@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+    <h1 class="dashboard-title">Transaction History</h1>
+
+    <!-- Transaction history table -->
+    <div class="table-container">
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Amount</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.sender.username }}</td>
+                    <td>{{ transaction.recipient.username }}</td>
+                    <td>${{ transaction.amount }}</td>
+                    <td>{{ transaction.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Download Excel button -->
+    <div class="download-button-container">
+        <a href="{{ url_for('download_transactions') }}" class="form-button">
+            Download Transaction History (Excel)
+        </a>
+    </div>
+</div>
+{% endblock %}

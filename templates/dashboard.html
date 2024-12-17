@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Dashboard</h1>
+    <p class="dashboard-welcome">Welcome, {{ user.username }}!</p>
+    <p class="dashboard-balance">Balance: ${{ user.balance }}</p>
+    <ul class="dashboard-actions">
+        <li class="dashboard-action-item">
+            <a href="/deposit" class="dashboard-action-link">Deposit</a>
+        </li>
+        <li class="dashboard-action-item">
+            <a href="/withdraw" class="dashboard-action-link">Withdraw</a>
+        </li>
+        <li class="dashboard-action-item">
+            <a href="/transfer" class="dashboard-action-link">Transfer</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

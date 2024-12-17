@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-content">
+    <h1 class="dashboard-title">Transfer</h1>
+    <form method="POST" action="/transfer" class="form-container">
+        <div class="form-row">
+            <label for="recipient" class="form-label">Recipient Username:</label>
+            <input type="text" name="recipient" id="recipient" class="form-input" required>
+        </div>
+
+        <div class="form-row">
+            <label for="recipient_account_number" class="form-label">Recipient Account Number:</label>
+            <input type="text" name="recipient_account_number" id="recipient_account_number" class="form-input" required>
+        </div>
+
+        <div class="form-row">
+            <label for="amount" class="form-label">Amount:</label>
+            <input type="number" name="amount" id="amount" class="form-input" required>
+        </div>
+
+        <button type="submit" class="form-button">Transfer</button>
+    </form>
+</div>
+{% endblock %}

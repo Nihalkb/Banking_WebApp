@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+    <h1 class="dashboard-title">Login</h1>
+
+    <!-- Display error message if login fails -->
+    {% if error %}
+        <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="/login" class="form-container">
+        <div class="form-row">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" id="username" class="form-input" required>
+        </div>
+
+        <div class="form-row">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" id="password" class="form-input" required>
+        </div>
+
+        <button type="submit" class="form-button">Login</button>
+    </form>
+</div>
+{% endblock %}
